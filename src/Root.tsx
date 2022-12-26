@@ -158,6 +158,24 @@ function Root() {
                 ))}
               </nav>
             </div>
+            <div className="flex flex-shrink-0 border-t border-gray-200 p-4 space-x-4">
+              <Link className="text-gray-400 hover:text-gray-500" to="about">
+                About
+              </Link>
+              <Link
+                className="text-gray-400 hover:text-gray-500"
+                to="contributing"
+              >
+                Contributing
+              </Link>
+              <a
+                className="text-gray-400 hover:text-gray-500"
+                href="https://github.com/DevScreenInternal/ds-devtools"
+                target="_blank"
+              >
+                Source
+              </a>
+            </div>
           </div>
         </div>
         <div className="flex flex-1 flex-col md:pl-64">
