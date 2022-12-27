@@ -21,6 +21,21 @@ export default function AboutPage() {
           This can present a security risk. It's usually not appropriate to send
           customer data to a third party without their prior authorization.
         </p>
+      </div>
+      <div className="mx-auto max-w-prose text-base lg:max-w-none">
+        <h2 className="mt-2 text-3xl font-bold leading-8 tracking-tight text-gray-900 sm:text-4xl">
+          Privacy
+        </h2>
+      </div>
+      <div className="prose prose-indigo mx-auto lg:max-w-none space-y-2">
+        <p>
+          The whole point of this project is to protect your data. We use
+          analytics tools on our main marketing site, but this devtools portion
+          has no analytics, whatsoever. We make no API calls - to ourselves or a
+          third party - and we don't track what you do in this tool. While it
+          would be nice to know what usage levels this site has, it would go
+          against the spirit of what we're tryiung to do.
+        </p>
         <p>
           DS dev tools is an open source, fully client-side solution to this. We
           make the source code available for you to inspect, and we never send
