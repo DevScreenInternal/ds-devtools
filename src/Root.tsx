@@ -5,20 +5,24 @@ import {
   Bars3Icon,
   CalendarIcon,
   ChartBarIcon,
+  EyeIcon,
+  EyeSlashIcon,
   FolderIcon,
   HomeIcon,
   InboxIcon,
+  LinkIcon,
+  ShieldCheckIcon,
+  SparklesIcon,
   UsersIcon,
   XMarkIcon,
 } from '@heroicons/react/24/outline';
 
 const navigation = [
-  { name: 'JSON Formatter', toRoute: 'json-formatter', icon: HomeIcon },
-  { name: 'Base64 Encode', toRoute: 'base-64-encoder', icon: UsersIcon },
-  { name: 'Base64 Decode', toRoute: 'base-64-decoder', icon: FolderIcon },
-  { name: 'URL Parser', toRoute: 'url-parser', icon: CalendarIcon },
-  { name: 'UUID Generator', toRoute: 'uuid-generator', icon: InboxIcon },
-  { name: 'Regex tester', toRoute: 'regex-tester', icon: ChartBarIcon },
+  { name: 'JSON Formatter', toRoute: 'json-formatter', icon: SparklesIcon },
+  { name: 'Base64 Encode', toRoute: 'base-64-encoder', icon: EyeSlashIcon },
+  { name: 'Base64 Decode', toRoute: 'base-64-decoder', icon: EyeIcon },
+  { name: 'URL Parser', toRoute: 'url-parser', icon: LinkIcon },
+  { name: 'UUID Generator', toRoute: 'uuid-generator', icon: ShieldCheckIcon },
 ];
 
 function classNames(...classes: string[]) {

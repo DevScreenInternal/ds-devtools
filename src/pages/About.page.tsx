@@ -3,7 +3,7 @@ export default function AboutPage() {
     <div className="mx-auto max-w-7xl space-y-8 px-4 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-prose text-base lg:max-w-none">
         <h1 className="text-lg font-semibold text-indigo-600">About</h1>
-        <h2 className="mt-2 text-3xl font-bold leading-8 tracking-tight text-gray-900 sm:text-4xl">
+        <h2 className="mt-2 text-2xl font-bold leading-8 tracking-tight text-gray-900 sm:text-3xl">
           Why we built DS dev tools
         </h2>
       </div>
@@ -23,7 +23,7 @@ export default function AboutPage() {
         </p>
       </div>
       <div className="mx-auto max-w-prose text-base lg:max-w-none">
-        <h2 className="mt-2 text-3xl font-bold leading-8 tracking-tight text-gray-900 sm:text-4xl">
+        <h2 className="mt-2 text-2xl font-bold leading-8 tracking-tight text-gray-900 sm:text-3xl">
           Privacy
         </h2>
       </div>
@@ -31,10 +31,10 @@ export default function AboutPage() {
         <p>
           The whole point of this project is to protect your data. We use
           analytics tools on our main marketing site, but this devtools portion
-          has no analytics, whatsoever. We make no API calls - to ourselves or a
-          third party - and we don't track what you do in this tool. While it
-          would be nice to know what usage levels this site has, it would go
-          against the spirit of what we're tryiung to do.
+          has no analytics. We make no API calls - to ourselves or a third party
+          - and we don't track what you do in this tool. While it would be nice
+          to know what usage levels this site has, it would go against the
+          spirit of what we're trying to do.
         </p>
         <p>
           DS dev tools is an open source, fully client-side solution to this. We
