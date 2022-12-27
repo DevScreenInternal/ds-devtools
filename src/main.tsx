@@ -9,6 +9,8 @@ import Base64EncoderPage from './pages/Base64Encoder.page';
 import Base64DecoderPage from './pages/Base64Decoder.page';
 import URLParserPage from './pages/UrlParser.page';
 import UUIDGeneratorPage from './pages/UUIDGenerator.page';
+import AboutPage from './pages/About.page';
+import ContributingPage from './pages/Contributing.page';
 
 const router = createBrowserRouter([
   {
@@ -35,6 +37,14 @@ const router = createBrowserRouter([
       {
         path: 'uuid-generator',
         element: <UUIDGeneratorPage />,
+      },
+      {
+        path: 'about',
+        element: <AboutPage />,
+      },
+      {
+        path: 'contributing',
+        element: <ContributingPage />,
       },
     ],
   },

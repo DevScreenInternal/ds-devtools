@@ -5,20 +5,24 @@ import {
   Bars3Icon,
   CalendarIcon,
   ChartBarIcon,
+  EyeIcon,
+  EyeSlashIcon,
   FolderIcon,
   HomeIcon,
   InboxIcon,
+  LinkIcon,
+  ShieldCheckIcon,
+  SparklesIcon,
   UsersIcon,
   XMarkIcon,
 } from '@heroicons/react/24/outline';
 
 const navigation = [
-  { name: 'JSON Formatter', toRoute: 'json-formatter', icon: HomeIcon },
-  { name: 'Base64 Encode', toRoute: 'base-64-encoder', icon: UsersIcon },
-  { name: 'Base64 Decode', toRoute: 'base-64-decoder', icon: FolderIcon },
-  { name: 'URL Parser', toRoute: 'url-parser', icon: CalendarIcon },
-  { name: 'UUID Generator', toRoute: 'uuid-generator', icon: InboxIcon },
-  { name: 'Regex tester', toRoute: 'regex-tester', icon: ChartBarIcon },
+  { name: 'JSON Formatter', toRoute: 'json-formatter', icon: SparklesIcon },
+  { name: 'Base64 Encode', toRoute: 'base-64-encoder', icon: EyeSlashIcon },
+  { name: 'Base64 Decode', toRoute: 'base-64-decoder', icon: EyeIcon },
+  { name: 'URL Parser', toRoute: 'url-parser', icon: LinkIcon },
+  { name: 'UUID Generator', toRoute: 'uuid-generator', icon: ShieldCheckIcon },
 ];
 
 function classNames(...classes: string[]) {
@@ -157,6 +161,24 @@ function Root() {
                   </NavLink>
                 ))}
               </nav>
+            </div>
+            <div className="flex flex-shrink-0 border-t border-gray-200 p-4 space-x-4">
+              <Link className="text-gray-400 hover:text-gray-500" to="about">
+                About
+              </Link>
+              <Link
+                className="text-gray-400 hover:text-gray-500"
+                to="contributing"
+              >
+                Contributing
+              </Link>
+              <a
+                className="text-gray-400 hover:text-gray-500"
+                href="https://github.com/DevScreenInternal/ds-devtools"
+                target="_blank"
+              >
+                Source
+              </a>
             </div>
           </div>
         </div>
