@@ -17,9 +17,18 @@ export default function Base64DecoderPage() {
     }
   }, [stringToDecode]);
   return (
-    <div>
-      <h1>Base64 Decoder</h1>
-      <div>
+    <div className="px-4 sm:px-6 lg:px-8">
+      <div className="sm:flex sm:items-center">
+        <div className="sm:flex-auto">
+          <h1 className="text-xl font-semibold text-gray-900">
+            Base64 Decoder
+          </h1>
+          <p className="mt-2 text-sm text-gray-700">
+            Decodes a base64 string to a plain old string
+          </p>
+        </div>
+      </div>
+      <div className="my-5">
         <div>
           <label
             htmlFor="stringToDecode"
