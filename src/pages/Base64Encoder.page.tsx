@@ -17,15 +17,24 @@ export default function Base64EncoderPage() {
     }
   }, [stringToEncode]);
   return (
-    <div>
-      <h1>Base64 Encoder</h1>
-      <div>
+    <div className="px-4 sm:px-6 lg:px-8">
+      <div className="sm:flex sm:items-center">
+        <div className="sm:flex-auto">
+          <h1 className="text-xl font-semibold text-gray-900">
+            Base64 Encoder
+          </h1>
+          <p className="mt-2 text-sm text-gray-700">
+            Encodes a string to base64
+          </p>
+        </div>
+      </div>
+      <div className="my-5">
         <div>
           <label
             htmlFor="stringToEncode"
             className="block text-sm font-medium text-gray-700"
           >
-            Raw string
+            Text to base64 encode
           </label>
           <div className="mt-1">
             <textarea
