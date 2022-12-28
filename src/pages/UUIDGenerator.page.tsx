@@ -1,6 +1,6 @@
 import { Menu, Transition } from '@headlessui/react';
 import { ChevronDownIcon } from '@heroicons/react/24/outline';
-import { ChangeEvent, Fragment, useState } from 'react';
+import { ChangeEvent, Fragment, useEffect, useState } from 'react';
 import { v1 as uuidV1, v4 as uuidV4 } from 'uuid';
 import SimpleDropdown from '../components/SimpleDropdown.component';
 import { copyTextToClipboard } from '../services/clipboard';
@@ -28,6 +28,10 @@ export default function UUIDGeneratorPage() {
     },
     { displayName: 'CSV', value: ExoprtType.CSV },
   ];
+
+  useEffect(() => {
+    document.title = 'UUID Generator | dev tools';
+  }, []);
 
   const getLabelForExportButton = (): string => {
     if (exportType === ExoprtType.JSON_ARRAY_OF_STRINGS) {

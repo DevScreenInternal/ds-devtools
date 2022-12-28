@@ -1,4 +1,10 @@
+import { useEffect } from 'react';
+
 export default function ContributingPage() {
+  useEffect(() => {
+    document.title = 'Contributing | dev tools';
+  }, []);
+
   return (
     <div className="mx-auto max-w-7xl space-y-8 px-4 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-prose text-base lg:max-w-none">

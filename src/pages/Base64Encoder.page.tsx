@@ -3,6 +3,9 @@ import { useEffect, useState } from 'react';
 export default function Base64EncoderPage() {
   const [stringToEncode, setStringToEncode] = useState<string>('');
   const [encodedString, setEncodedString] = useState<string>('');
+  useEffect(() => {
+    document.title = 'Base64 encoder | dev tools';
+  }, []);
 
   useEffect(() => {
     try {
