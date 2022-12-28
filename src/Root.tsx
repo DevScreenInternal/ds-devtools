@@ -16,6 +16,7 @@ import {
   UsersIcon,
   XMarkIcon,
 } from '@heroicons/react/24/outline';
+import logo from './logo.svg';
 
 const navigation = [
   { name: 'JSON Formatter', toRoute: 'json-formatter', icon: SparklesIcon },
@@ -88,12 +89,15 @@ function Root() {
                     </div>
                   </Transition.Child>
                   <div className="h-0 flex-1 overflow-y-auto pt-5 pb-4">
-                    <div className="flex flex-shrink-0 items-center px-4">
+                    <div className="flex items-center flex-shrink-0 px-4">
                       <img
                         className="h-8 w-auto"
-                        src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                        alt="DevScreen Tools"
-                      />
+                        src={logo}
+                        alt="DevScreen logo"
+                      ></img>
+                      <p className="text-xl font-bold text-gray-600 sm:text-2xl pl-2">
+                        Dev Tools
+                      </p>
                     </div>
                     <nav className="mt-5 space-y-1 px-2">
                       {navigation.map((item) => (
@@ -132,12 +136,15 @@ function Root() {
           {/* Sidebar component, swap this element with another sidebar if you like */}
           <div className="flex min-h-0 flex-1 flex-col border-r border-gray-200 bg-white">
             <div className="flex flex-1 flex-col overflow-y-auto pt-5 pb-4">
-              <div className="flex flex-shrink-0 items-center px-4">
+              <div className="flex items-center flex-shrink-0 px-4">
                 <img
                   className="h-8 w-auto"
-                  src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                  alt="Your Company"
-                />
+                  src={logo}
+                  alt="DevScreen logo"
+                ></img>
+                <p className="text-xl font-bold text-gray-600 sm:text-2xl pl-2">
+                  Dev Tools
+                </p>
               </div>
               <nav className="mt-5 flex-1 space-y-1 bg-white px-2">
                 {navigation.map((item) => (
