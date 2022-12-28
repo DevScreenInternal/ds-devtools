@@ -23,7 +23,7 @@ export default function UUIDGeneratorPage() {
   );
   const exportOptions = [
     {
-      displayName: "JSON array of id's",
+      displayName: "JSON list of id's",
       value: ExoprtType.JSON_ARRAY_OF_STRINGS,
     },
     { displayName: 'CSV', value: ExoprtType.CSV },

@@ -34,7 +34,7 @@ export default function Base64DecoderPage() {
             htmlFor="stringToDecode"
             className="block text-sm font-medium text-gray-700"
           >
-            Raw string
+            Base64 string to decode
           </label>
           <div className="mt-1">
             <textarea
