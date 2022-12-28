@@ -3,6 +3,9 @@ import { useEffect, useState } from 'react';
 export default function JsonFormatterPage() {
   const [rawJson, setRawJson] = useState<string>('');
   const [parsedJson, setParsedJson] = useState<string>('');
+  useEffect(() => {
+    document.title = 'JSON Formatter | dev tools';
+  }, []);
 
   useEffect(() => {
     try {

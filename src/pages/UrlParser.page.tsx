@@ -3,6 +3,9 @@ import { useEffect, useState } from 'react';
 export default function URLParserPage() {
   const [url, setUrl] = useState<string>('');
   const [parsedUrl, setParsedUrl] = useState<URL>();
+  useEffect(() => {
+    document.title = 'URL Parser | dev tools';
+  }, []);
 
   useEffect(() => {
     try {

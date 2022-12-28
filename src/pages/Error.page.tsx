@@ -1,8 +1,12 @@
+import { useEffect } from 'react';
 import { useRouteError } from 'react-router-dom';
 
 export default function ErrorPage() {
   const error = useRouteError();
   console.error(error);
+  useEffect(() => {
+    document.title = 'Error | dev tools';
+  }, []);
 
   return (
     <div id="error-page">
