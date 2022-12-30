@@ -187,6 +187,15 @@ function Root() {
                 Source
               </a>
             </div>
+            <div className="px-4 pb-4">
+              <a
+                className="text-gray-400 hover:text-gray-500"
+                href="https://devscreen.io"
+                target="_blank"
+              >
+                Go to devscreen.io
+              </a>
+            </div>
           </div>
         </div>
         <div className="flex flex-1 flex-col md:pl-64">
