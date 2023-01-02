@@ -19,6 +19,10 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
+        path: '',
+        element: <JsonFormatterPage />,
+      },
+      {
         path: 'json-formatter',
         element: <JsonFormatterPage />,
       },
