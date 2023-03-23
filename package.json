@@ -18,6 +18,7 @@
     "match-sorter": "^6.3.1",
     "qs": "^6.11.1",
     "react": "^18.2.0",
+    "react-diff-viewer-continued": "^3.2.6",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.4.3",
     "uuid": "^9.0.0",
