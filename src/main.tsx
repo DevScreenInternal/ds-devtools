@@ -12,6 +12,7 @@ import UUIDGeneratorPage from './pages/UUIDGenerator.page';
 import AboutPage from './pages/About.page';
 import ContributingPage from './pages/Contributing.page';
 import YamlJsonConverterPage from './pages/YamlJsonConverter.page';
+import DiffViewerPage from './pages/DiffViewer.page';
 
 const router = createBrowserRouter([
   {
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
       {
         path: 'yaml-json-converter',
         element: <YamlJsonConverterPage />,
+      },
+      {
+        path: 'diff-viewer',
+        element: <DiffViewerPage />,
       },
       {
         path: 'about',

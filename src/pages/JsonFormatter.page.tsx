@@ -52,7 +52,7 @@ export default function JsonFormatterPage() {
             </label>
             <div className="mt-1">
               <textarea
-                rows={35}
+                rows={25}
                 name="rawJson"
                 id="rawJson"
                 className="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"

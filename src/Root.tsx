@@ -3,17 +3,12 @@ import { Fragment, useState } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 import {
   Bars3Icon,
-  CalendarIcon,
-  ChartBarIcon,
   EyeIcon,
   EyeSlashIcon,
-  FolderIcon,
-  HomeIcon,
-  InboxIcon,
   LinkIcon,
+  ScaleIcon,
   ShieldCheckIcon,
   SparklesIcon,
-  UsersIcon,
   XMarkIcon,
 } from '@heroicons/react/24/outline';
 import logo from './logo.svg';
@@ -23,6 +18,7 @@ const navigation = [
   // { name: 'YAML - JSON converter', toRoute: 'yaml-json-converter', icon: LinkIcon}, // this is in beta
   { name: 'URL Parser', toRoute: 'url-parser', icon: LinkIcon },
   { name: 'UUID Generator', toRoute: 'uuid-generator', icon: ShieldCheckIcon },
+  { name: 'Diff Viewer', toRoute: 'diff-viewer', icon: ScaleIcon },
   { name: 'Base64 Encode', toRoute: 'base-64-encoder', icon: EyeSlashIcon },
   { name: 'Base64 Decode', toRoute: 'base-64-decoder', icon: EyeIcon },
 ];
