@@ -59,7 +59,7 @@ export default function URLParserPage() {
           Parse
         </button>
       </div>
-      <div className="mt-1">
+      <div className="px-3 bg-white rounded mt-1">
         <div className="overflow-hidden sm:rounded-lg">
           <div className="py-5">
             <h3 className="text-lg font-medium leading-6 text-gray-900">
