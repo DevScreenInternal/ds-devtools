@@ -196,6 +196,9 @@ function Root() {
               >
                 By DevScreen
               </a>
+              <span className="px-4 pb-4 text-gray-400">
+                v{window.APP_VERSION}
+              </span>
             </div>
           </div>
         </div>
