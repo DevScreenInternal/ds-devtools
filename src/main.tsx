@@ -11,6 +11,7 @@ import URLParserPage from './pages/UrlParser.page';
 import UUIDGeneratorPage from './pages/UUIDGenerator.page';
 import AboutPage from './pages/About.page';
 import ContributingPage from './pages/Contributing.page';
+import YamlJsonConverterPage from './pages/YamlJsonConverter.page';
 
 const router = createBrowserRouter([
   {
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
       {
         path: 'uuid-generator',
         element: <UUIDGeneratorPage />,
+      },
+      {
+        path: 'yaml-json-converter',
+        element: <YamlJsonConverterPage />,
       },
       {
         path: 'about',

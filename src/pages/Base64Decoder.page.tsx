@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 
 export default function Base64DecoderPage() {
-  const [stringToDecode, setStringToDecode] = useState<string>('');
+  const [stringToDecode, setStringToDecode] =
+    useState<string>('TG9yZW0gaXBzdW0=');
   const [decodedString, setDecodedString] = useState<string>('');
   useEffect(() => {
     document.title = 'Base64 decoder | dev tools';
@@ -43,6 +44,7 @@ export default function Base64DecoderPage() {
               id="stringToDecode"
               className="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
               onChange={(e) => setStringToDecode(e.target.value)}
+              value={stringToDecode}
             />
           </div>
         </div>

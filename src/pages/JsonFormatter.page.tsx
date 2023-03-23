@@ -4,7 +4,7 @@ import CodeMirror from '@uiw/react-codemirror';
 import { json } from '@codemirror/lang-json';
 
 export default function JsonFormatterPage() {
-  const [rawJson, setRawJson] = useState<string>('');
+  const [rawJson, setRawJson] = useState<string>('{"foo":"bar"}');
   const [parsedJson, setParsedJson] = useState<string>('');
   const [isJsonInvalid, setIsJsonInvalid] = useState<boolean>(false);
   useEffect(() => {
@@ -13,15 +13,22 @@ export default function JsonFormatterPage() {
 
   useEffect(() => {
     try {
-      setParsedJson(JSON.stringify(JSON.parse(rawJson), null, 4));
+      setParsedJson(parseJsonString(rawJson, 4));
       setIsJsonInvalid(false);
-    } catch (error: any) {
-      console.log(Object.keys(error));
-      console.log(error);
+    } catch (error) {
       setParsedJson(rawJson ? rawJson : '{}');
       setIsJsonInvalid(!!rawJson);
     }
   }, [rawJson]);
+
+  const parseJsonString = (
+    jsonString: string,
+    indentation: number = 4
+  ): string => {
+    console.log('p');
+    return JSON.stringify(JSON.parse(jsonString), null, indentation);
+  };
+
   return (
     <div className="px-4 sm:px-6 lg:px-8" data-gramm_editor="false">
       <div className="sm:flex sm:items-center">
@@ -50,6 +57,7 @@ export default function JsonFormatterPage() {
                 id="rawJson"
                 className="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                 onChange={(e) => setRawJson(e.target.value)}
+                value={rawJson}
               />
             </div>
           </div>
