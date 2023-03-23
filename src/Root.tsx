@@ -20,10 +20,11 @@ import logo from './logo.svg';
 
 const navigation = [
   { name: 'JSON Formatter', toRoute: 'json-formatter', icon: SparklesIcon },
-  { name: 'Base64 Encode', toRoute: 'base-64-encoder', icon: EyeSlashIcon },
-  { name: 'Base64 Decode', toRoute: 'base-64-decoder', icon: EyeIcon },
+  // { name: 'YAML - JSON converter', toRoute: 'yaml-json-converter', icon: LinkIcon}, // this is in beta
   { name: 'URL Parser', toRoute: 'url-parser', icon: LinkIcon },
   { name: 'UUID Generator', toRoute: 'uuid-generator', icon: ShieldCheckIcon },
+  { name: 'Base64 Encode', toRoute: 'base-64-encoder', icon: EyeSlashIcon },
+  { name: 'Base64 Decode', toRoute: 'base-64-decoder', icon: EyeIcon },
 ];
 
 function classNames(...classes: string[]) {
@@ -190,10 +191,10 @@ function Root() {
             <div className="px-4 pb-4">
               <a
                 className="text-gray-400 hover:text-gray-500"
-                href="https://devscreen.io"
+                href="https://www.devscreen.io"
                 target="_blank"
               >
-                Go to devscreen.io
+                By DevScreen
               </a>
             </div>
           </div>

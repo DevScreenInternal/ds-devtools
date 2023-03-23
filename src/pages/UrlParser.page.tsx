@@ -1,12 +1,16 @@
-import { PaperClipIcon } from '@heroicons/react/24/outline';
+import { Square2StackIcon } from '@heroicons/react/24/outline';
 import { useEffect, useState } from 'react';
-import { parseUrl } from '../services/url-parser';
+import CopyToClipboard from '../components/CopyToClipboard.component';
+import { parseUrl, queryStringToJSONString } from '../services/url-parser';
 
 export default function URLParserPage() {
-  const [url, setUrl] = useState<string>('');
+  const [url, setUrl] = useState<string>(
+    'https://twitter.com/devscreen_app/status/1634328515154780160?s=20'
+  );
   const [parsedUrl, setParsedUrl] = useState<URL | null>();
   useEffect(() => {
     document.title = 'URL Parser | dev tools';
+    setParsedUrl(parseUrl(url));
   }, []);
 
   function onClickParseUrl() {
@@ -43,6 +47,7 @@ export default function URLParserPage() {
               id="url"
               className="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
               onChange={(e) => setUrl(e.target.value)}
+              value={url}
             />
           </div>
         </div>
@@ -67,77 +72,157 @@ export default function URLParserPage() {
           <div className="border-t border-gray-200 py-5 sm:p-0">
             <dl className="sm:divide-y sm:divide-gray-200">
               <div className="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5 sm:px-6">
-                <dt className="text-sm font-medium text-gray-500">hash</dt>
+                <dt className="text-sm font-medium text-gray-500">Href</dt>
                 <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
-                  {parsedUrl?.hash}
+                  {parsedUrl?.href || '--'}
+                  <div className="ml-4 inline ">
+                    {parsedUrl?.href ? (
+                      <CopyToClipboard contentToCopy={parsedUrl?.href || ''} />
+                    ) : (
+                      <></>
+                    )}
+                  </div>
                 </dd>
               </div>
               <div className="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5 sm:px-6">
-                <dt className="text-sm font-medium text-gray-500">host</dt>
+                <dt className="text-sm font-medium text-gray-500">Origin</dt>
                 <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
-                  {parsedUrl?.host}
+                  {parsedUrl?.origin || '--'}
+                  <div className="ml-4 inline ">
+                    {parsedUrl?.origin ? (
+                      <CopyToClipboard
+                        contentToCopy={parsedUrl?.origin || ''}
+                      />
+                    ) : (
+                      <></>
+                    )}
+                  </div>
                 </dd>
               </div>
               <div className="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5 sm:px-6">
-                <dt className="text-sm font-medium text-gray-500">hostname</dt>
+                <dt className="text-sm font-medium text-gray-500">Path name</dt>
                 <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
-                  {parsedUrl?.hostname}
-                </dd>
-              </div>
-              <div className="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5 sm:px-6">
-                <dt className="text-sm font-medium text-gray-500">href</dt>
-                <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
-                  {parsedUrl?.href}
-                </dd>
-              </div>
-              <div className="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5 sm:px-6">
-                <dt className="text-sm font-medium text-gray-500">origin</dt>
-                <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
-                  {parsedUrl?.origin}
-                </dd>
-              </div>
-              <div className="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5 sm:px-6">
-                <dt className="text-sm font-medium text-gray-500">password</dt>
-                <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
-                  {parsedUrl?.password}
-                </dd>
-              </div>
-              <div className="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5 sm:px-6">
-                <dt className="text-sm font-medium text-gray-500">pathname</dt>
-                <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
-                  {parsedUrl?.pathname}
-                </dd>
-              </div>
-              <div className="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5 sm:px-6">
-                <dt className="text-sm font-medium text-gray-500">port</dt>
-                <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
-                  {parsedUrl?.port}
-                </dd>
-              </div>
-              <div className="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5 sm:px-6">
-                <dt className="text-sm font-medium text-gray-500">protocol</dt>
-                <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
-                  {parsedUrl?.protocol}
-                </dd>
-              </div>
-              <div className="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5 sm:px-6">
-                <dt className="text-sm font-medium text-gray-500">search</dt>
-                <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
-                  {parsedUrl?.search}
+                  <span>{parsedUrl?.pathname || '--'}</span>
+                  <div className="ml-4 inline ">
+                    {parsedUrl?.pathname ? (
+                      <CopyToClipboard
+                        contentToCopy={parsedUrl?.pathname || ''}
+                      />
+                    ) : (
+                      <></>
+                    )}
+                  </div>
                 </dd>
               </div>
               <div className="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5 sm:px-6">
                 <dt className="text-sm font-medium text-gray-500">
-                  searchParams
+                  Search parameters
                 </dt>
-                <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
-                  {parsedUrl?.searchParams}
+                <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0 whitespace-pre-line">
+                  <pre>
+                    {parsedUrl?.search
+                      ? queryStringToJSONString(parsedUrl?.search)
+                      : 'None'}
+                  </pre>
+                  {parsedUrl?.search ? (
+                    <div className="top-2 inline relative">
+                      <CopyToClipboard
+                        contentToCopy={
+                          parsedUrl?.search
+                            ? queryStringToJSONString(parsedUrl?.search)
+                            : ''
+                        }
+                      />
+                    </div>
+                  ) : (
+                    <></>
+                  )}
                 </dd>
               </div>
               <div className="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5 sm:px-6">
-                <dt className="text-sm font-medium text-gray-500">username</dt>
+                <dt className="text-sm font-medium text-gray-500">Hash</dt>
                 <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
-                  {parsedUrl?.username}
+                  <span>{parsedUrl?.hash || '--'}</span>
+                  <div className="ml-4 inline ">
+                    {parsedUrl?.hash ? (
+                      <CopyToClipboard contentToCopy={parsedUrl?.hash || ''} />
+                    ) : (
+                      <></>
+                    )}
+                  </div>
+                </dd>
+              </div>
+              <div className="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5 sm:px-6">
+                <dt className="text-sm font-medium text-gray-500">Host</dt>
+                <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+                  <span>{parsedUrl?.host || '--'}</span>
+                  <div className="ml-4 inline ">
+                    {parsedUrl?.host ? (
+                      <CopyToClipboard contentToCopy={parsedUrl?.host || ''} />
+                    ) : (
+                      <></>
+                    )}
+                  </div>
+                </dd>
+              </div>
+              <div className="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5 sm:px-6">
+                <dt className="text-sm font-medium text-gray-500">Hostname</dt>
+                <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+                  <span>{parsedUrl?.hostname || '--'}</span>
+                  <div className="ml-4 inline ">
+                    {parsedUrl?.hostname ? (
+                      <CopyToClipboard
+                        contentToCopy={parsedUrl?.hostname || ''}
+                      />
+                    ) : (
+                      <></>
+                    )}
+                  </div>
+                </dd>
+              </div>
+              <div className="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5 sm:px-6">
+                <dt className="text-sm font-medium text-gray-500">Port</dt>
+                <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+                  <span>{parsedUrl?.port || '--'}</span>
+                  <div className="ml-4 inline ">
+                    {parsedUrl?.port ? (
+                      <CopyToClipboard contentToCopy={parsedUrl?.port || ''} />
+                    ) : (
+                      <></>
+                    )}
+                  </div>
+                </dd>
+              </div>
+              <div className="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5 sm:px-6">
+                <dt className="text-sm font-medium text-gray-500">Protocol</dt>
+                <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+                  <span>{parsedUrl?.protocol || '--'}</span>
+                  <div className="ml-4 inline ">
+                    {parsedUrl?.protocol ? (
+                      <CopyToClipboard
+                        contentToCopy={parsedUrl?.protocol || ''}
+                      />
+                    ) : (
+                      <></>
+                    )}
+                  </div>
+                </dd>
+              </div>
+              <div className="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5 sm:px-6">
+                <dt className="text-sm font-medium text-gray-500">
+                  Search string
+                </dt>
+                <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+                  <span>{parsedUrl?.search || '--'}</span>
+                  <div className="ml-4 inline ">
+                    {parsedUrl?.search ? (
+                      <CopyToClipboard
+                        contentToCopy={parsedUrl?.search || ''}
+                      />
+                    ) : (
+                      <></>
+                    )}
+                  </div>
                 </dd>
               </div>
             </dl>

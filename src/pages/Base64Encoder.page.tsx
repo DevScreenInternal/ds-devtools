@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 export default function Base64EncoderPage() {
-  const [stringToEncode, setStringToEncode] = useState<string>('');
+  const [stringToEncode, setStringToEncode] = useState<string>('Lorem ipsum');
   const [encodedString, setEncodedString] = useState<string>('');
   useEffect(() => {
     document.title = 'Base64 encoder | dev tools';
@@ -43,6 +43,7 @@ export default function Base64EncoderPage() {
               id="stringToEncode"
               className="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
               onChange={(e) => setStringToEncode(e.target.value)}
+              value={stringToEncode}
             />
           </div>
         </div>
