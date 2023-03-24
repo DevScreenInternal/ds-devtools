@@ -2,11 +2,11 @@
 
 ## About
 
-This project is a privacy-conscious developer tools application. There are lots of great online tools to help us with this, but many of them transmit our data and process the it on a server. This can present a security risk. By using this (https://devtools.devscreen.io or self-hosted), you can rest assured that your data doesn't leave your computer.
+This project is a suite of privacy-conscious developer tools that doesn't rely on any backend service. There are lots of great online tools to help developers with common tasks, but many of them transmit our data and process the it on a server. This can present a security risk, especially if the information is not public. By using this (https://devtools.devscreen.io or self-hosted), your data doesn't leave your browser.
 
 ## Contributing & self-hosting
 
-To run the application:
+This is a static single page web application, so there are no backend services or databases needed. To run the application:
 
 1. Clone the repository `git clone https://github.com/DevScreenInternal/ds-devtools.git`
 1. `cd ds-devtools`
