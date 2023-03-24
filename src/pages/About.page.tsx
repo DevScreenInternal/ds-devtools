@@ -34,18 +34,20 @@ export default function AboutPage() {
       </div>
       <div className="prose prose-indigo mx-auto lg:max-w-none space-y-2">
         <p>
-          The whole point of this project is to protect your data. We use
-          analytics tools on our main marketing site, but this devtools portion
-          has no analytics. We make no API calls - to ourselves or a third party
-          - and we don't track what you do in this tool. While it would be nice
-          to know what usage levels this site has, it would go against the
-          spirit of what we're trying to do.
+          This project was build to serve as an option for developer tooling
+          that is transparent and safe. While we use analytics tools on our main
+          marketing site, this devtools portion is entirely separate and has no
+          analytics. We make no API calls - to ourselves or a third party - and
+          we don't track what you do in this tool. While it would be nice to
+          know what usage levels this site has, it would go against the spirit
+          of what we're trying to do so we don't do it.
         </p>
         <p>
-          DS dev tools is an open source, fully client-side solution to this. We
-          make the source code available for you to inspect, and we never send
-          any data to our servers or any third party. It's all processed in your
-          browser locally.
+          DS dev tools is an open source, fully client-side solution. We make
+          the source code available for you to inspect, and we never send any
+          data to our servers or any third party. It's all processed in your
+          browser locally. If you prefer, you're more than welcome to self-host
+          it.
         </p>
       </div>
     </div>
